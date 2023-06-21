@@ -5,13 +5,35 @@
 - area(self): метод, возвращающий площадь прямоугольника
 - perimeter(self): метод, возвращающий периметр прямоугольника
 - from_diagonal(cls, diagonal, aspect_ratio): класс-метод, принимающий диагональ прямоугольника и соотношение сторон и возвращающий объект класса Rectangle
+#  Квадрат диагонали прямоугольника равен сумме квадратов двух его смежных сторон (по теореме Пифагора)
 - is_square(width, height): статический метод, принимающий ширину и высоту прямоугольника и возвращающий True,
 если это квадрат, и False в противном случае
 """
+from math import sqrt, sin
 
 
 class Rectangle:
-    pass
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        return self.width * self.height
+
+    def perimeter(self):
+        return (self.width + self.height) * 2
+
+    @classmethod
+    def from_diagonal(cls, diagonal, aspect_ratio):
+        width = diagonal / 3 * aspect_ratio             # ???
+        height = sqrt(diagonal * diagonal - width * width)
+        return Rectangle(width, height)
+
+    @staticmethod
+    def is_square(width, height):
+        if width == height:
+            return True
+        return False
 
 
 rectangle = Rectangle(4, 5)
@@ -24,3 +46,4 @@ print(rectangle2.perimeter())  # 13.42
 
 print(Rectangle.is_square(4, 4))  # True
 print(Rectangle.is_square(4, 5))  # False
+
