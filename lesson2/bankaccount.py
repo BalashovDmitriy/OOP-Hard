@@ -20,15 +20,6 @@ class BankAccount:
     def balance(self):
         return self.__balance
 
-    @balance.setter
-    def balance(self, value):
-        self.__balance = value
-
-    @balance.deleter
-    def balance(self):
-        self.__balance = 0
-        del self
-
     def deposit(self, amount):
         self.__balance += amount
 
