@@ -28,7 +28,6 @@ class BankAccount:
 
     def close(self):
         self.__balance = 0
-        return self.__balance
 
 
 account = BankAccount(1000)
