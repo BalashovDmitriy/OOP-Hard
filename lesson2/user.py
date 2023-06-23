@@ -40,7 +40,7 @@ class User:
         print(self.__password == password)
 
     def logout(self):
-        if self._is_logged_in is True:
+        if self._is_logged_in:
             self._is_logged_in = False
 
 
