@@ -25,15 +25,13 @@ class Rectangle:
 
     @classmethod
     def from_diagonal(cls, diagonal, aspect_ratio):
-        width = diagonal / 3 * aspect_ratio             # ???
+        width = diagonal / 3 * aspect_ratio  # ???
         height = sqrt(diagonal * diagonal - width * width)
         return Rectangle(width, height)
 
     @staticmethod
     def is_square(width, height):
-        if width == height:
-            return True
-        return False
+        return width == height
 
 
 rectangle = Rectangle(4, 5)
@@ -46,4 +44,3 @@ print(rectangle2.perimeter())  # 13.42
 
 print(Rectangle.is_square(4, 4))  # True
 print(Rectangle.is_square(4, 5))  # False
-

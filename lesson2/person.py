@@ -24,9 +24,7 @@ class Person:
 
     @staticmethod
     def is_adult(age):
-        if age > 18:
-            return True
-        return False
+        return age > 18
 
 
 person1 = Person("John", 28)
