@@ -25,9 +25,9 @@ class Rectangle:
 
     @classmethod
     def from_diagonal(cls, diagonal, aspect_ratio):
-        width = diagonal / 3 * aspect_ratio  # ???
+        width = sqrt(diagonal * diagonal / 5)  # ???
         height = sqrt(diagonal * diagonal - width * width)
-        return Rectangle(width, height)
+        return cls(width, height)
 
     @staticmethod
     def is_square(width, height):
