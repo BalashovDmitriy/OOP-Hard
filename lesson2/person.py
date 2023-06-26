@@ -20,7 +20,7 @@ class Person:
 
     @classmethod
     def from_birth_year(cls, name, birth_year):
-        return Person(name, 2021 - birth_year)
+        return cls(name, 2021 - birth_year)
 
     @staticmethod
     def is_adult(age):
