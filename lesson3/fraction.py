@@ -10,7 +10,28 @@
 
 
 class Fraction:
-    pass
+
+    def __init__(self, numerator, denominator):
+        self.numerator = numerator
+        self.denominator = denominator
+
+    def __repr__(self):
+        return f"{self.__class__.__name__}({self.numerator}, {self.denominator})"
+
+    def __str__(self):
+        return f"{self.numerator}/{self.denominator}"
+
+    def __add__(self, other):
+        if self.denominator == other.denominator:
+            return Fraction(self.numerator + other.numerator, self.denominator)
+        elif self.denominator > other.denominator:
+            self.numerator *= int(self.denominator / other.denominator)
+            other.denominator = self.denominator
+            return Fraction(self.numerator + other.numerator * 2, other.denominator)
+        else:
+            self.numerator *= int(other.denominator / self.denominator)
+            self.denominator = other.denominator
+            return Fraction(self.numerator + other.numerator, self.denominator)
 
 
 fraction1 = Fraction(1, 2)
