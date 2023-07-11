@@ -30,8 +30,8 @@ person.name = "John"
 person.age = 30
 try:
     person.salary = 5000  # raises AttributeError
-except AttributeError:
-    print('Attribute Error')
+except Exception:
+    raise AttributeError('Нет такого атрибута')
 
 employee = Employee2()
 employee.name = "Jane"
