@@ -25,7 +25,7 @@ class Rectangle:
 
     @classmethod
     def from_diagonal(cls, diagonal, aspect_ratio):
-        width = sqrt(diagonal * diagonal / 5)  # ???
+        width = sqrt(diagonal * diagonal / 5)
         height = sqrt(diagonal * diagonal - width * width)
         return cls(width, height)
 

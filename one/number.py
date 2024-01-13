@@ -12,6 +12,7 @@
 `.substract(<значение>)` вычитает указанное число из value
 """
 
+
 class Number:
 
     def __init__(self, value):
